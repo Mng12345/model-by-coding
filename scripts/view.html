@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>single-frame model viewer</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #e8e6e1;
+      }
+      canvas {
+        display: block;
+      }
+      #error {
+        position: absolute;
+        left: 40px;
+        top: 40px;
+        font: 24px/1.4 monospace;
+        color: #8a1f1f;
+        white-space: pre-wrap;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="view"></canvas>
+    <div id="error"></div>
+    <script>
+      /*
+       * Single-frame viewer for a code-built three.js model.
+       *
+       * It does exactly three things: size the canvas, load the model bundle,
+       * and render one frame with the camera pose taken from the URL. It is
+       * meant to be driven by headless Chrome (--screenshot), so it has no
+       * animation loop, no input handling and no network access of its own.
+       *
+       * URL parameters (all optional except the bundle):
+       *   bundle=<url>     script URL of the model bundle (IIFE). Default: probe
+       *                    a list of common output paths next to this page.
+       *   global=<name>    global name exported by the bundle. Default: "Scene".
+       *                    If absent, the first loaded global exposing create()
+       *                    and PARTS is used.
+       *   yaw,pitch,dist   camera pose in degrees / metres
+       *   tx,ty,tz         camera target in metres (default 0,0,0)
+       *   fov              vertical field of view in degrees (default 30)
+       *   explode          0..1 disassembly amount (default 0)
+       *   spin             blade spin in radians (default 0)
+       *   tilt             head pitch in degrees, only applied if the bundle
+       *                    implements setHeadTilt()
+       *   lift             whole-model lift in metres, only applied if the
+       *                    bundle implements setLift()
+       *   w,h              canvas size in CSS pixels (default 1920x1080; the
+       *                    headless screenshot window must match)
+       *   dpr              device pixel ratio (default 1)
+       *   bg               page background colour (default #e8e6e1)
+       *
+       * Per-part debug flags (noshadow/hide/only) are read from location.search
+       * by the model bundle itself, so they are passed through unchanged.
+       */
+      (function () {
+        const q = new URLSearchParams(location.search);
+        const num = (key, fallback) => {
+          if (!q.has(key)) return fallback;
+          const n = Number(q.get(key));
+          return Number.isFinite(n) ? n : fallback;
+        };
+
+        const W = Math.max(16, Math.round(num("w", 1920)));
+        const H = Math.max(16, Math.round(num("h", 1080)));
+        const DPR = Math.max(0.1, num("dpr", 1));
+        const DEFAULT_BUNDLES = [
+          "./bundle.js",
+          "./scene.bundle.js",
+          "./model.bundle.js",
+          "./dist/scene.bundle.js",
+          "./dist/scene.bundle.min.js",
+          "../dist/scene.bundle.js",
+          "../dist/scene.bundle.min.js",
+          "../dist/model.bundle.min.js",
+        ];
+
+        const canvas = document.getElementById("view");
+        const errorBox = document.getElementById("error");
+
+        canvas.width = W;
+        canvas.height = H;
+        canvas.style.width = W + "px";
+        canvas.style.height = H + "px";
+        document.documentElement.style.width = W + "px";
+        document.documentElement.style.height = H + "px";
+        document.body.style.width = W + "px";
+        document.body.style.height = H + "px";
+        if (q.get("bg")) document.body.style.background = q.get("bg");
+
+        function fail(message) {
+          // A headless screenshot of an error page is still a screenshot, so make
+          // the failure loud and machine-readable instead of a blank frame.
+          document.body.dataset.error = message;
+          errorBox.style.display = "block";
+          errorBox.textContent = "view.html: " + message;
+          document.title = "error";
+          console.error("[view] " + message);
+        }
+
+        function loadScript(src) {
+          return new Promise((resolve, reject) => {
+            const el = document.createElement("script");
+            el.src = src;
+            el.onload = () => resolve(src);
+            el.onerror = () => {
+              el.remove();
+              reject(new Error("cannot load " + src));
+            };
+            document.head.appendChild(el);
+          });
+        }
+
+        // Bundles are plain IIFE scripts that publish one global object. When the
+        // caller does not name it, take the first global that looks like a scene
+        // API (create() + PARTS) instead of guessing from the file name.
+        function findSceneApi() {
+          for (const key of Object.keys(window)) {
+            const value = window[key];
+            if (!value || typeof value !== "object") continue;
+            if (typeof value.create !== "function") continue;
+            if (!Array.isArray(value.PARTS)) continue;
+            return value;
+          }
+          return null;
+        }
+
+        async function boot() {
+          const sources = q.get("bundle") ? [q.get("bundle")] : DEFAULT_BUNDLES;
+          const wantedGlobal = q.get("global");
+          let ctl = null;
+          let loadedFrom = null;
+          const tried = [];
+
+          for (const src of sources) {
+            try {
+              await loadScript(src);
+            } catch (err) {
+              tried.push(src);
+              continue;
+            }
+            const api = (wantedGlobal && window[wantedGlobal]) || findSceneApi();
+            if (api && typeof api.create === "function") {
+              try {
+                ctl = api.create(canvas, { width: W, height: H, pixelRatio: DPR });
+              } catch (err) {
+                fail("bundle create() threw: " + err.message);
+                return;
+              }
+              loadedFrom = src;
+              break;
+            }
+            tried.push(src);
+          }
+
+          if (!ctl) {
+            fail(
+              "no model bundle found. Tried:\n  " +
+                (tried.length ? tried.join("\n  ") : "(none)") +
+                "\nPass ?bundle=<url> (and ?global=<name> if it is not auto-detected).",
+            );
+            return;
+          }
+
+          ctl.setView({
+            yaw: num("yaw", -20),
+            pitch: num("pitch", 10),
+            dist: num("dist", 1.0),
+            target: [num("tx", 0), num("ty", 0), num("tz", 0)],
+            fov: num("fov", 30),
+          });
+          if (typeof ctl.setExplode === "function") ctl.setExplode(num("explode", 0));
+          if (typeof ctl.setSpin === "function") ctl.setSpin(num("spin", 0));
+          if (q.has("tilt") && typeof ctl.setHeadTilt === "function") ctl.setHeadTilt(num("tilt", 0));
+          if (q.has("lift") && typeof ctl.setLift === "function") ctl.setLift(num("lift", 0));
+
+          ctl.render();
+          window.__viewerReady = true;
+          window.__viewerBundle = loadedFrom;
+          document.title = "ready";
+          console.log("[view] ready via " + loadedFrom + " (" + W + "x" + H + " @ " + DPR + "x)");
+        }
+
+        boot();
+      })();
+    </script>
+  </body>
+</html>

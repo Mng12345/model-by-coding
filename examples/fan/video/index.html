@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>White Desk Fan · Thirteen-Part Teardown</title>
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url("assets/fonts/inter-latin-400-normal.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: block;
+        src: url("assets/fonts/inter-latin-500-normal.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Inter Tight";
+        font-style: normal;
+        font-weight: 600;
+        font-display: block;
+        src: url("assets/fonts/inter-tight-latin-600-normal.woff2") format("woff2");
+      }
+      :root {
+        --ink: #17181a;
+        --ink-soft: #4a4b4d;
+        --ink-faint: #6f6f6b;
+        --ground: #f5f3ef;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--ground);
+      }
+      #view {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        display: block;
+      }
+      #leaders {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: visible;
+        pointer-events: none;
+      }
+      .label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 1;
+        letter-spacing: 0.01em;
+        color: var(--ink);
+        white-space: nowrap;
+        opacity: 0;
+        will-change: transform, opacity;
+      }
+      .card {
+        position: absolute;
+        left: 132px;
+        opacity: 0;
+        will-change: transform, opacity;
+      }
+      #titleCard,
+      #endCard {
+        top: 350px;
+      }
+      .card-kicker {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 29px;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        margin-bottom: 24px;
+      }
+      .card-title {
+        font-family: "Inter Tight", sans-serif;
+        font-weight: 600;
+        font-size: 96px;
+        letter-spacing: -0.032em;
+        line-height: 0.95;
+        color: var(--ink);
+      }
+      .card-sub {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+        letter-spacing: 0.005em;
+        color: var(--ink-soft);
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="43.5"
+      data-width="1920"
+      data-height="1080"
+    >
+      <canvas id="view" width="1920" height="1080"></canvas>
+      <svg id="leaders" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div id="labels"></div>
+      <div class="card" id="titleCard">
+        <div class="card-kicker">Teardown</div>
+        <div class="card-title">White Desk Fan</div>
+        <div class="card-sub">Thirteen parts, front to back</div>
+      </div>
+      <div class="card" id="endCard">
+        <div class="card-kicker">Thirteen-part teardown</div>
+        <div class="card-title">White Desk Fan</div>
+        <div class="card-sub">Modeled and rendered in Three.js</div>
+      </div>
+      <audio
+        id="soundtrack"
+        class="clip"
+        data-start="0"
+        data-duration="43.5"
+        data-track-index="10"
+        data-volume="1"
+        src="assets/audio/mix.wav"
+      ></audio>
+    </div>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/vendor/fan.bundle.min.js"></script>
+    <script src="assets/director.js"></script>
+    <script>
+      (function () {
+        var DURATION = 43.5;
+        var canvas = document.getElementById("view");
+        var svg = document.getElementById("leaders");
+        var labelLayer = document.getElementById("labels");
+        var titleCard = document.getElementById("titleCard");
+        var endCard = document.getElementById("endCard");
+
+        var ctl = FanScene.create(canvas, { width: 1920, height: 1080, pixelRatio: 1 });
+
+        var NS = "http://www.w3.org/2000/svg";
+        var lineEls = {};
+        var labelEls = {};
+        FanDirector.PARTS.forEach(function (name) {
+          var g = document.createElementNS(NS, "g");
+          g.setAttribute("opacity", "0");
+          var line = document.createElementNS(NS, "polyline");
+          line.setAttribute("fill", "none");
+          line.setAttribute("stroke", "#17181a");
+          line.setAttribute("stroke-opacity", "0.32");
+          line.setAttribute("stroke-width", "1");
+          var dot = document.createElementNS(NS, "circle");
+          dot.setAttribute("r", "3");
+          dot.setAttribute("fill", "#17181a");
+          dot.setAttribute("fill-opacity", "0.55");
+          g.appendChild(line);
+          g.appendChild(dot);
+          svg.appendChild(g);
+          lineEls[name] = { g: g, line: line, dot: dot };
+
+          var el = document.createElement("div");
+          el.className = "label";
+          labelLayer.appendChild(el);
+          labelEls[name] = el;
+        });
+
+        var lastTime = -1;
+
+        function seek(seconds) {
+          var t = Math.max(0, Math.min(DURATION, seconds));
+          var applied = FanDirector.apply(ctl, t);
+          var frame = applied.frame;
+          var items = FanDirector.layoutLabels(applied.anchors, frame);
+
+          var i;
+          for (i = 0; i < FanDirector.PARTS.length; i++) {
+            var name = FanDirector.PARTS[i];
+            labelEls[name].style.opacity = "0";
+            lineEls[name].g.setAttribute("opacity", "0");
+          }
+          for (i = 0; i < items.length; i++) {
+            var it = items[i];
+            var el = labelEls[it.part];
+            el.textContent = it.text;
+            var drift = (1 - it.alpha) * (it.side === "left" ? -14 : 14);
+            var shift = it.side === "left" ? " translateX(-100%)" : "";
+            el.style.transform =
+              "translate(" +
+              (it.x + drift) +
+              "px," +
+              it.y +
+              "px) translateY(-50%)" +
+              shift;
+            el.style.opacity = String(it.alpha);
+
+            var elbowX = it.ax + (it.side === "left" ? -26 : 26);
+            var lg = lineEls[it.part];
+            lg.line.setAttribute(
+              "points",
+              it.ax + "," + it.ay + " " + elbowX + "," + it.y + " " + it.lineEndX + "," + it.y,
+            );
+            lg.dot.setAttribute("cx", it.ax);
+            lg.dot.setAttribute("cy", it.ay);
+            lg.g.setAttribute("opacity", String(it.alpha));
+          }
+
+          titleCard.style.opacity = String(frame.title);
+          titleCard.style.transform = "translateY(" + (1 - frame.title) * 16 + "px)";
+          endCard.style.opacity = String(frame.end);
+          endCard.style.transform = "translateY(" + (1 - frame.end) * 16 + "px)";
+
+          lastTime = t;
+        }
+
+        window.addEventListener("hf-seek", function (e) {
+          seek(e.detail.time);
+        });
+        seek(0);
+
+        // Required registration. Also drives seek() from the renderer's timeline
+        // playhead, so canvas state always matches the frame being captured.
+        var driver = { t: 0 };
+        var tl = gsap.timeline({ paused: true });
+        tl.to(
+          driver,
+          {
+            t: DURATION,
+            duration: DURATION,
+            ease: "none",
+            onUpdate: function () {
+              var t = tl.time();
+              if (Math.abs(t - lastTime) > 1e-4) seek(t);
+            },
+          },
+          0,
+        );
+        window.__timelines = window.__timelines || {};
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(function () {
+            seek(lastTime < 0 ? 0 : lastTime);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

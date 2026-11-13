@@ -1,0 +1,267 @@
+{
+ "version": 2,
+ "spec": "SPEC-v2.md \u00a74",
+ "sr": 48000,
+ "duration_s": 43.5,
+ "frames": 2088000,
+ "music_offset_s": 8.0,
+ "release_times": [
+  21.15,
+  21.45,
+  21.75,
+  22.05,
+  22.35,
+  22.65,
+  22.95,
+  23.25,
+  23.55,
+  23.85,
+  24.15,
+  24.45,
+  24.75
+ ],
+ "close_times": [
+  35.18,
+  35.43,
+  35.68,
+  35.93,
+  36.18,
+  36.43,
+  36.68,
+  36.93,
+  37.18,
+  37.43,
+  37.68,
+  37.93,
+  38.18
+ ],
+ "seat_time": 38.45,
+ "whirr": {
+  "loop_source_s": 22.8,
+  "splice_xfade_ms": 2.0,
+  "splice_samples": [
+   1094304
+  ],
+  "splice_times_s": [
+   22.798
+  ],
+  "boost_db_9_12_5": 3.0,
+  "lowcut_26_34": {
+   "split_hz": 120,
+   "gain": 0.55,
+   "gain_db": -5.19
+  }
+ },
+ "layer_rms_db": {
+  "music_bed_5_18": -22.5,
+  "whirr_3_8": -52.5,
+  "room_1_2": -57.66
+ },
+ "hits": [
+  {
+   "type": "release",
+   "index": 1,
+   "time_s": 21.15,
+   "level_db": -7.0,
+   "pan": -0.16
+  },
+  {
+   "type": "release",
+   "index": 2,
+   "time_s": 21.45,
+   "level_db": -8.2,
+   "pan": 0.08
+  },
+  {
+   "type": "release",
+   "index": 3,
+   "time_s": 21.75,
+   "level_db": -6.2,
+   "pan": -0.05
+  },
+  {
+   "type": "release",
+   "index": 4,
+   "time_s": 22.05,
+   "level_db": -7.6,
+   "pan": 0.14
+  },
+  {
+   "type": "release",
+   "index": 5,
+   "time_s": 22.35,
+   "level_db": -6.8,
+   "pan": -0.11
+  },
+  {
+   "type": "release",
+   "index": 6,
+   "time_s": 22.65,
+   "level_db": -7.9,
+   "pan": 0.03
+  },
+  {
+   "type": "release",
+   "index": 7,
+   "time_s": 22.95,
+   "level_db": -6.0,
+   "pan": -0.18
+  },
+  {
+   "type": "release",
+   "index": 8,
+   "time_s": 23.25,
+   "level_db": -7.3,
+   "pan": 0.17
+  },
+  {
+   "type": "release",
+   "index": 9,
+   "time_s": 23.55,
+   "level_db": -6.5,
+   "pan": 0.0
+  },
+  {
+   "type": "release",
+   "index": 10,
+   "time_s": 23.85,
+   "level_db": -8.0,
+   "pan": 0.1
+  },
+  {
+   "type": "release",
+   "index": 11,
+   "time_s": 24.15,
+   "level_db": -6.6,
+   "pan": -0.13
+  },
+  {
+   "type": "release",
+   "index": 12,
+   "time_s": 24.45,
+   "level_db": -7.1,
+   "pan": 0.12
+  },
+  {
+   "type": "release",
+   "index": 13,
+   "time_s": 24.75,
+   "level_db": -6.9,
+   "pan": -0.07
+  },
+  {
+   "type": "close",
+   "index": 1,
+   "time_s": 35.18,
+   "level_db": -8.6,
+   "pan": -0.14,
+   "reversed_lead_s": 0.1643
+  },
+  {
+   "type": "close",
+   "index": 2,
+   "time_s": 35.43,
+   "level_db": -8.39,
+   "pan": 0.12,
+   "reversed_lead_s": 0.1697
+  },
+  {
+   "type": "close",
+   "index": 3,
+   "time_s": 35.68,
+   "level_db": -8.18,
+   "pan": -0.08,
+   "reversed_lead_s": 0.239
+  },
+  {
+   "type": "close",
+   "index": 4,
+   "time_s": 35.93,
+   "level_db": -7.97,
+   "pan": 0.16,
+   "reversed_lead_s": 0.2094
+  },
+  {
+   "type": "close",
+   "index": 5,
+   "time_s": 36.18,
+   "level_db": -7.76,
+   "pan": -0.1,
+   "reversed_lead_s": 0.2146
+  },
+  {
+   "type": "close",
+   "index": 6,
+   "time_s": 36.43,
+   "level_db": -7.55,
+   "pan": 0.06,
+   "reversed_lead_s": 0.2007
+  },
+  {
+   "type": "close",
+   "index": 7,
+   "time_s": 36.68,
+   "level_db": -7.34,
+   "pan": -0.18,
+   "reversed_lead_s": 0.1908
+  },
+  {
+   "type": "close",
+   "index": 8,
+   "time_s": 36.93,
+   "level_db": -7.13,
+   "pan": 0.15,
+   "reversed_lead_s": 0.2143
+  },
+  {
+   "type": "close",
+   "index": 9,
+   "time_s": 37.18,
+   "level_db": -6.92,
+   "pan": -0.03,
+   "reversed_lead_s": 0.1843
+  },
+  {
+   "type": "close",
+   "index": 10,
+   "time_s": 37.43,
+   "level_db": -6.71,
+   "pan": 0.11,
+   "reversed_lead_s": 0.2039
+  },
+  {
+   "type": "close",
+   "index": 11,
+   "time_s": 37.68,
+   "level_db": -6.5,
+   "pan": -0.12,
+   "reversed_lead_s": 0.2345
+  },
+  {
+   "type": "close",
+   "index": 12,
+   "time_s": 37.93,
+   "level_db": -6.29,
+   "pan": 0.09,
+   "reversed_lead_s": 0.1889
+  },
+  {
+   "type": "close",
+   "index": 13,
+   "time_s": 38.18,
+   "level_db": -6.08,
+   "pan": -0.05,
+   "reversed_lead_s": 0.224
+  },
+  {
+   "type": "seat",
+   "index": 1,
+   "time_s": 38.45,
+   "level_db": -6.8,
+   "pan": 0.0
+  }
+ ],
+ "pre_peak_db": -3.18,
+ "pre_rms_db": -22.54,
+ "pre_crest_db": 19.36
+}
