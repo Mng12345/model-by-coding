@@ -7,6 +7,8 @@ HyperFrames, and checked against the photographs with headless-Chrome screenshot
 
 Nothing here was imported from a modelling tool. The geometry is code.
 
+The finished film is public: https://youtu.be/cwNxK5GSSjY (43.5 s, sound on).
+
 ## What was produced
 
 | Item | Value |

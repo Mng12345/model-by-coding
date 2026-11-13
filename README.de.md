@@ -335,6 +335,7 @@ Fällt eine Nutzung unter keine dieser Lizenzen, vor der Wiederverwendung bitte 
 - Inter und Inter Tight – Webfonts unter der SIL Open Font License 1.1; die Lizenztexte liegen neben den Schriftdateien in `examples/fan/video/assets/fonts/`.
 - Die Referenzfotos hat der Autor aufgenommen; Marken- und Typenschilder wurden vor der Veröffentlichung unscharf gemacht. Das Modell trägt kein Branding. Das ist eine Geometriestudie, keine vom Hersteller gebilligte Nachbildung.
 - Repository: https://github.com/Mng12345/model-by-coding
+- Film auf YouTube: https://youtu.be/cwNxK5GSSjY
 - Releases: https://github.com/Mng12345/model-by-coding/releases/latest
 - Issues: https://github.com/Mng12345/model-by-coding/issues
 

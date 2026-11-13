@@ -335,6 +335,7 @@ python ../../../scripts/hf_read_check.py .hyperframes/artifacts/checks/<uuid>.js
 - Inter 與 Inter Tight——SIL Open Font License 1.1 下的 Web 字型；授權條款文字隨字型檔案放在 `examples/fan/video/assets/fonts/`。
 - 參考照片由作者拍攝；品牌和型號標籤在發布前做了模糊處理。模型不帶品牌。這是一次幾何研究，不是獲得授權的復刻。
 - 儲存庫：https://github.com/Mng12345/model-by-coding
+- 成片（YouTube）：https://youtu.be/cwNxK5GSSjY
 - Releases：https://github.com/Mng12345/model-by-coding/releases/latest
 - Issues：https://github.com/Mng12345/model-by-coding/issues
 
