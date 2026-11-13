@@ -87,7 +87,7 @@ Agent 做的事：
 - 暫停的 GSAP 時間軸註冊在 `window.__timelines.main`。頁面監聽 `hf-seek`，用 `event.detail.time` 重繪 canvas；沒有任何東西自行前進，因此任意一幀都能被截取。
 - 43.5 秒的範例有十個鏡頭：標題、環繞、格柵特寫、後側四分之三、中心輪轂特寫、全景、爆炸展開、13 個引線標籤的定格、合體、片尾。
 - 爆炸展開是每個零件一個進度值。分離從 21.15 s 起以 0.30 s 間隔錯開；合體從 35.18 s 起以 0.25 s 間隔進行；最後一個零件在 38.45 s 落座。每個引線標籤在對應零件開始移動後 0.30 s 開始淡入（淡入本身持續 0.45 s）。
-- 聲音按同一契約剪輯。範例混音為 43.5 s、48 kHz、16-bit 立體聲，整體響度 −16.0 LUFS，真峰值 −1.9 dBTP。`examples/fan/video/assets/audio/sources.md` 列出素材來源和處理鏈。
+- 聲音按同一契約剪輯。範例混音為 43.5 s、48 kHz、16-bit 立體聲，整體響度 −16.0 LUFS，真峰值 −2.0 dBTP。`examples/fan/video/assets/audio/sources.md` 列出素材來源和處理鏈。
 - `check` 是門檻：在它報告零問題之前不要算圖。`snapshot --at <秒>` 截取單幀供檢查；範例海報就是 27.6 s 那一幀。
 
 輸出：一個 MP4，位於 `examples/fan/video/renders/`，預設命名為 `video_<YYYY-MM-DD>_<HH-MM-SS>.mp4`。

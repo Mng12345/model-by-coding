@@ -182,7 +182,7 @@ cannot show.
 
 - Deliver one `assets/audio/mix.wav`. In the example it is 43.500000 s,
   48 kHz, 16-bit stereo, measured −16.0 LUFS integrated with true peak
-  −1.9 dBTP.
+  −2.0 dBTP.
 - Place it once at `data-start="0"` as shown above. HyperFrames does not mix
   multiple tracks for you; do the mix outside and hand over the result.
 - Contact cues: one release and one close per part plus a final seat in the

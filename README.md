@@ -85,7 +85,7 @@ Output: `examples/fan/src/fan-scene.js`, and the built `examples/fan/video/asset
 - A paused GSAP timeline is registered on `window.__timelines.main`. The page listens for `hf-seek` and redraws the canvas from `event.detail.time`; nothing advances on its own, so any frame can be captured.
 - The 43.5 s example has ten shots: title, orbit, grille macro, rear three-quarter, hub macro, wide, explode, hold with 13 leader labels, reassemble, end card.
 - The explode is one progress value per part. Releases are staggered by 0.30 s starting at 21.15 s; the reassembly touches start at 35.18 s in 0.25 s steps; the last part seats at 38.45 s. Each leader label starts fading in 0.30 s after its part starts moving (the fade itself takes 0.45 s).
-- The soundtrack is cut to the same contract. The example mix is 43.5 s, 48 kHz, 16-bit stereo, −16.0 LUFS integrated with a true peak of −1.9 dBTP. `examples/fan/video/assets/audio/sources.md` lists the sources and the processing chain.
+- The soundtrack is cut to the same contract. The example mix is 43.5 s, 48 kHz, 16-bit stereo, −16.0 LUFS integrated with a true peak of −2.0 dBTP. `examples/fan/video/assets/audio/sources.md` lists the sources and the processing chain.
 - `check` is the gate: do not render before it reports zero issues. `snapshot --at <seconds>` captures stills for inspection; the example poster is the 27.6 s frame.
 
 Output: an MP4 in `examples/fan/video/renders/`, named `video_<YYYY-MM-DD>_<HH-MM-SS>.mp4` by default.

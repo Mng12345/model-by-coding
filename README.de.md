@@ -87,7 +87,7 @@ Ausgabe: `examples/fan/src/fan-scene.js` und das gebaute `examples/fan/video/ass
 - Die pausierte GSAP-Timeline ist unter `window.__timelines.main` registriert. Die Seite hört auf `hf-seek` und zeichnet das Canvas aus `event.detail.time` neu; nichts läuft von selbst weiter, also lässt sich jeder Frame aufnehmen.
 - Das Beispiel mit 43,5 Sekunden hat zehn Einstellungen: Titel, Orbit, Gitter-Makro, hinteres Dreiviertel, Naben-Makro, Weitwinkel, Explosion, Standbild mit 13 Leader-Labels, Zusammenbau, Endcard.
 - Die Explosion ist ein Fortschrittswert pro Teil. Die Trennung beginnt bei 21,15 s in 0,30-s-Schritten; der Zusammenbau beginnt bei 35,18 s in 0,25-s-Schritten; das letzte Teil rastet bei 38,45 s ein. Jedes Leader-Label beginnt 0,30 s nach dem Start seines Teils einzublenden (der Fade selbst dauert 0,45 s).
-- Der Ton wird nach demselben Vertrag geschnitten. Der Mix des Beispiels ist 43,5 s lang, 48 kHz, 16-Bit-Stereo, mit −16,0 LUFS integrierter Loudness und −1,9 dBTP True Peak. `examples/fan/video/assets/audio/sources.md` listet Quellen und Bearbeitungskette.
+- Der Ton wird nach demselben Vertrag geschnitten. Der Mix des Beispiels ist 43,5 s lang, 48 kHz, 16-Bit-Stereo, mit −16,0 LUFS integrierter Loudness und −2,0 dBTP True Peak. `examples/fan/video/assets/audio/sources.md` listet Quellen und Bearbeitungskette.
 - `check` ist das Gate: vor dem Rendern muss der Bericht null Probleme melden. `snapshot --at <Sekunden>` nimmt einen einzelnen Frame zur Kontrolle auf; das Poster des Beispiels ist der Frame bei 27,6 s.
 
 Ausgabe: eine MP4-Datei unter `examples/fan/video/renders/`, standardmäßig benannt `video_<YYYY-MM-DD>_<HH-MM-SS>.mp4`.

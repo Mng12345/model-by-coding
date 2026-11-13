@@ -14,7 +14,7 @@ Nothing here was imported from a modelling tool. The geometry is code.
 | Parts in the model | 13 |
 | Film length | 43.5 s, 1305 frames at 30 fps, 1920x1080 |
 | Photographs used | 6 (one front three-quarter, five angle shots) |
-| Audio | -16.0 LUFS integrated, true peak -2.1 dBTP, LRA 1.5 LU |
+| Audio | -16.0 LUFS integrated, true peak -2.0 dBTP, LRA 1.5 LU |
 | Foley cues | 27, each within +/-5 ms of its visual event |
 | Documented deviations from the photos | 7 |
 
