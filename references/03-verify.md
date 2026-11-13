@@ -159,9 +159,9 @@ is invisible in the film; 5–10% is noticeable on a side-by-side sheet; above
 show the largest errors in head depth and base diameter, because single-photo
 perspective flatters both.
 
-Record what you changed and why in a short deviation list (the example's spec
-keeps seven known deviations with the reason for each). That list is what
-prevents "fixing" an intentional simplification on the next pass.
+Record what you changed and why in a short deviation list (the example's README
+keeps a table of seven known deviations with the reason for each). That list is
+what prevents "fixing" an intentional simplification on the next pass.
 
 ## 5. The lesson: circle fitting fails on background arcs
 

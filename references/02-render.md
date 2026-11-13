@@ -193,11 +193,13 @@ cannot show.
 - Verify sync by measuring, not by ear: `work/verify_mix.py` in the example
   reads the mix, compares each event's peak with the director constants
   (27/27 within ±5 ms, worst 0.854 ms) and cross-checks with `ebur128`.
-- Music licences matter. The example's bed is a Pixabay track marked "Content ID
-  Registered" (the licence allows commercial use; YouTube may still claim it)
-  and its foley is synthesised locally, partly because Pixabay's sound-effect
-  downloads were blocked by a Turnstile check. Check the claim risk before
-  publishing; a Content ID claim on a demo video is not worth the risk.
+- Music licences matter, and so does the Content ID mark. The example's first bed was a
+  Pixabay track whose page carries "Content ID Registered" — the licence allows
+  commercial use, but a platform claim is still possible. It was replaced with a
+  track whose page shows no such mark, and the mix was rebuilt around it; the foley was
+  synthesised locally, partly because Pixabay's sound-effect downloads were blocked by
+  a Turnstile check. Read the mark per track (it follows the uploader, not the
+  individual track) before publishing; a claim on a demo video is not worth the risk.
 
 ## 5. Command cycle
 

@@ -14,15 +14,29 @@ Nothing here was imported from a modelling tool. The geometry is code.
 | Parts in the model | 13 |
 | Film length | 43.5 s, 1305 frames at 30 fps, 1920x1080 |
 | Photographs used | 6 (one front three-quarter, five angle shots) |
-| Audio | -16.0 LUFS integrated, true peak -1.9 dBTP, LRA 2.7 LU |
+| Audio | -16.0 LUFS integrated, true peak -2.1 dBTP, LRA 1.5 LU |
 | Foley cues | 27, each within +/-5 ms of its visual event |
 | Documented deviations from the photos | 7 |
 
-The largest known deviation: the head centre in the model sits at 1.02 D above the base
-(where D is the head diameter), while the photographs measure 1.04-1.10 D. The model is
-therefore slightly more compact than the real object. All seven deviations are listed in
-the case study notes that ship with the article; the point of listing them is that the
-verification loop is honest about what it could not match.
+## Deviations that were accepted
+
+Seven differences between the model and the photographs were logged and left unfixed. The
+list is part of the point: the verification loop is only honest if it says what it could
+not match.
+
+| # | Deviation | What the photographs show | Why it stayed |
+| --- | --- | --- | --- |
+| 1 | Head centre height | 1.02 D in the model against 1.04-1.10 D measured, D being the head diameter | The head sits 2-7 % low and the neck reads slightly short from the side. |
+| 2 | Rear-grille spoke outer radius | About 0.85-0.88 R in the model, 0.92-0.95 R in the photographs | The white rim around the back reads wider than on the real part. |
+| 3 | Control box | Correct aspect ratio, about 3-5 % too large overall | Resizing it moved a chain of proportions that were already aligned. |
+| 4 | Hub cap | A blank white disc; the real part carries a printed label and a threaded ring | The brand label was deliberately removed from the model. |
+| 5 | Bottom reinforcement ribs | Diamond ribs at ±45°; the real part is an orthogonal grid | The bottom is never visible in the film. |
+| 6 | Rear-shell turning seam | A faint vertical seam, two or three grey levels under side light | A vertex seam from the lathe, invisible at 1x viewing. |
+| 7 | Cable in the exploded hold | It travels with the control box and its end floats slightly; it returns on reassembly | Visible for under four seconds and reads as part of the explosion. |
+
+Row 1 is the largest error. Rows 4 and 5 are deliberate; rows 6 and 7 are invisible in the
+finished film. Rows 2 and 3 are genuine proportion errors that were cheaper to record than
+to fix, and fixing them would have invalidated measurements that already passed.
 
 ## Layout
 

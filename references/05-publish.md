@@ -153,11 +153,11 @@ needed.
 Two pitfalls worth more than the upload settings:
 
 - **Content ID.** Any music can be claimed even when it is "free". The example's
-  bed is a Pixabay track marked "Content ID Registered": the licence allows
-  commercial use, but a YouTube claim is still possible, and its foley is
-  synthesised locally partly for that reason. Generate everything you can, or
-  use a track whose licence explicitly permits reuse, and keep the licence note
-  in the repo.
+  first bed was a Pixabay track marked "Content ID Registered": the licence allows
+  commercial use, but a YouTube claim was still possible, so the mix was rebuilt
+  around a track whose page shows no mark, and the foley is synthesised locally.
+  Generating everything you can removes the question; if you use a track, check its
+  page for the mark (it follows the uploader) and keep the licence note in the repo.
 - **Limits change.** Unverified channels have lower upload limits, and the
   numbers move; check YouTube Studio's current limit for the channel instead of
   trusting a number from a tutorial.

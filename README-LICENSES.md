@@ -74,7 +74,7 @@ No audio binary is committed to the repository. The `.gitignore` excludes `*.wav
 The soundtrack of the example is built from two source layers, then mixed:
 
 1. **Original synthesized foley and ambience.** 27 plastic-mechanism sounds, a fan whirr loop and a room-tone loop were synthesized from scratch by `examples/fan/video/assets/audio/work/synth_foley.py` and `synth_beds.py`. No samples were used, so there is no third-party audio right in these layers.
-2. **Music: "Minimal Technology" by fugu_vibes.** Downloaded from the Pixabay music library: https://pixabay.com/music/ambient-minimal-technology-623485/. It is used under the Pixabay Content License, which allows free use, including commercial use, without attribution; the current terms are on the track page and the Pixabay site.
+2. **Music: "Real Life" by GreenRocketAudio.** Downloaded from the Pixabay music library: https://pixabay.com/music/corporate-real-life-612733/. It is used under the Pixabay Content License, which allows free use, including commercial use, without attribution; the current terms are on the track page and the Pixabay site. The first cut of the film used "Minimal Technology" by fugu_vibes and was re-mixed with this track; see the note below.
 
 The mix itself is built by `work/build_mix.py` and `work/master.py`, which cut, compress, EQ and master the layers into the 43.5 s track.
 
@@ -82,7 +82,13 @@ The film's soundtrack therefore contains third-party music even though the repos
 
 Two practical notes from `examples/fan/video/assets/audio/sources.md`:
 
-- The track page is marked **Content ID Registered**. Publishing the film on platforms with automatic content matching may trigger a claim even though the Pixabay license permits the use. Check before publishing, or replace the track.
+- The track was chosen because its page carries **no Content ID Registration**. The
+  first pick, "Minimal Technology" by fugu_vibes, was marked **Content ID Registered**
+  (and its author states that all of their tracks are registered), so publishing the
+  film on platforms with automatic content matching could have produced a claim even
+  though the Pixabay license permits the use. The mix was rebuilt around a clean track
+  rather than risk it; the foley and ambience did not change. Check the current mark on
+  any replacement track before publishing.
 - The foley is synthesized, not recorded. It is not a sample library and carries no restriction beyond the project's own licensing.
 
 `examples/fan/video/assets/audio/sources.md` records the full provenance: source files, processing chain, measured loudness, per-cue timing and the self-check results.
