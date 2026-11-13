@@ -82,13 +82,17 @@ The film's soundtrack therefore contains third-party music even though the repos
 
 Two practical notes from `examples/fan/video/assets/audio/sources.md`:
 
-- The track was chosen because its page carries **no Content ID Registration**. The
-  first pick, "Minimal Technology" by fugu_vibes, was marked **Content ID Registered**
-  (and its author states that all of their tracks are registered), so publishing the
-  film on platforms with automatic content matching could have produced a claim even
-  though the Pixabay license permits the use. The mix was rebuilt around a clean track
-  rather than risk it; the foley and ambience did not change. Check the current mark on
-  any replacement track before publishing.
+- The track's page carries **no Content ID Registration** marking, which is why it
+  replaced the first pick, "Minimal Technology" by fugu_vibes. That page was marked
+  **Content ID Registered** (and its author states that all of their tracks are
+  registered). The foley and ambience did not change in either rebuild.
+- **The mark on the page is not the whole story.** Right after the film went public,
+  YouTube matched "Real Life" anyway: *Claim: Real Life Calls*, type copyright — audio,
+  claimant **HAAWK for a 3rd Party on behalf of GreenRocketAudio**, found in 0:01–0:43.
+  The page reported no impact on reach or on the channel and no copyright strike; the
+  stated impact was a *potential limitation to earning*. So the Pixabay licence permits
+  the use, and a content match can still appear. Budget for that, and check the claim on
+  the platform after the first upload rather than trusting a quiet track page.
 - The foley is synthesized, not recorded. It is not a sample library and carries no restriction beyond the project's own licensing.
 
 `examples/fan/video/assets/audio/sources.md` records the full provenance: source files, processing chain, measured loudness, per-cue timing and the self-check results.

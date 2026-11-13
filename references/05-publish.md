@@ -158,6 +158,15 @@ Two pitfalls worth more than the upload settings:
   around a track whose page shows no mark, and the foley is synthesised locally.
   Generating everything you can removes the question; if you use a track, check its
   page for the mark (it follows the uploader) and keep the licence note in the repo.
+  A quiet page is still not proof: the example's replacement track was claimed after
+  publication (audio claim, 0:01–0:43, only a potential limit on earning, no strike,
+  no impact on reach). Read the claim panel after the first upload, before the link
+  goes anywhere, and decide leave / dispute / replace as its own step.
+- **Unverified channels lose two things.** A custom thumbnail is refused until the
+  channel completes phone verification ("To add custom thumbnails, verify your phone
+  number"), and external links in the description are not clickable until the one-time
+  verification is done. The film still publishes, but plan for an auto-selected frame
+  and plain-text links, or verify the channel before the upload.
 - **Limits change.** Unverified channels have lower upload limits, and the
   numbers move; check YouTube Studio's current limit for the channel instead of
   trusting a number from a tutorial.

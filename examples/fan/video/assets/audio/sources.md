@@ -17,7 +17,7 @@ at `work/v1-mix.wav`.
 | Source site | Pixabay (music library) |
 | Work page | https://pixabay.com/music/corporate-real-life-612733/ |
 | License | Pixabay Content License (as stated on the work page) |
-| Content ID evidence | the string `content id` appears **0 times** in the page text |
+| Content ID evidence | the string `content id` appears **0 times** in the page text; YouTube still matched the track after publication (post-publish note below) |
 | File used | `03-real-life.mp3` — 140.904469 s, 44.1 kHz stereo, MP3 256 kbps, 4,508,943 bytes, SHA256 `bfc1ceaaf9eb6b6022c2114127362b95e68af554b87bd490b28997a680338b8c` |
 | Used window | source 14.295 s → 57.795 s (43.5 s slice) |
 
@@ -26,6 +26,14 @@ The v2 bed was `fugu_vibes` — "Minimal Technology"
 That page carried a **Content ID Registered** marking, so a published film using it risked a
 YouTube Content ID claim; the bed was replaced with "Real Life" to reduce that risk, and the v2
 track no longer ships.
+
+**Post-publish result (2026-11-13).** The finished film went public and YouTube matched the
+replacement track anyway. The claim page read *Claim: Real Life Calls*, type copyright, audio,
+found in 0:01-0:43, claimant "HAAWK for a 3rd Party on behalf of GreenRocketAudio". It reported
+*No impact to video's reach*, *No impact to channel* and *isn't a copyright strike*; the stated
+impact was a *Potential limitation to your ways to earn*. No dispute was filed. The practical
+lesson: a work page that does not print a Content ID mark is weak evidence, not a guarantee, so
+read the platform's claim panel after the first upload.
 
 Tempo measurement: **105.0 BPM**, bar (4 beats) = **2.2857 s**, bar-line grid 0.295 s + k × 2.2857 s
 (fitted on the low-band amplitude envelope, ±10 ms). Music fades in over film 2.00–2.30 s (0.30 s)

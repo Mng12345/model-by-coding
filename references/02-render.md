@@ -200,6 +200,13 @@ cannot show.
   synthesised locally, partly because Pixabay's sound-effect downloads were blocked by
   a Turnstile check. Read the mark per track (it follows the uploader, not the
   individual track) before publishing; a claim on a demo video is not worth the risk.
+- The quiet page is only weak evidence. After the example film went public, YouTube
+  matched the replacement track anyway — *Real Life Calls*, audio claim by HAAWK for a
+  third party on behalf of the uploader, found in 0:01–0:43. The page reported no impact
+  on reach or channel and no strike, only a potential limit on earning. Treat "no mark
+  on the page" as "no guarantee", check the platform's claim panel after the first
+  upload, and keep the claim decision (leave, dispute, replace) separate from the film
+  itself.
 
 ## 5. Command cycle
 
